@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
       drawer: const MenuDrawer(),
       body: SingleChildScrollView(
         controller: _scrollController,
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             Stack(
