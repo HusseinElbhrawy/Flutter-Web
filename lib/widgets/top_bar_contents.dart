@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'appbar_title.dart';
+
 class TopBarContents extends StatefulWidget {
   final double opacity;
 
@@ -41,16 +43,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                     SizedBox(
                       width: screenSize.width / 4,
                     ),
-                    const Text(
-                      'Author',
-                      style: TextStyle(
-                        color: Color(0xFF077bd7),
-                        fontSize: 26,
-                        fontFamily: ' Raleway',
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 3,
-                      ),
-                    ),
+                    const AppBarTitle(),
                     // SizedBox(width: screenSize.width / 15),
                     Expanded(
                       child: Row(

@@ -9,9 +9,8 @@ class MenuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xFF6158e6),
+        color: const Color(0xFF6158e6),
         child: Padding(
-
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,8 +18,8 @@ class MenuDrawer extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {},
-                child: Text(
-                  'Login',
+                child: const Text(
+                  'Home',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
               ),
@@ -33,8 +32,8 @@ class MenuDrawer extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {},
-                child: Text(
-                  'Sign Up',
+                child: const Text(
+                  'About',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
               ),
@@ -47,7 +46,7 @@ class MenuDrawer extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: const Text(
                   'Read',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
@@ -61,7 +60,7 @@ class MenuDrawer extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: const Text(
                   'Contact Us',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
@@ -70,7 +69,7 @@ class MenuDrawer extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Copyright © 2021 | DBestech',
+                    'Copyright © 2021 | Hussein Elbhrawy',
                     style: TextStyle(
                       color: Colors.blueGrey.shade300,
                       fontSize: 14,

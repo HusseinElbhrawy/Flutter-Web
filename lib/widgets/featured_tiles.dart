@@ -38,7 +38,7 @@ class FeaturedTiles extends StatelessWidget {
                               height: screenSize.width / 2.5,
                               width: screenSize.width / 1.5,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
+                                borderRadius: BorderRadius.circular(25.0),
                                 child: Image.asset(
                                   assets[pageIndex],
                                   fit: BoxFit.cover,

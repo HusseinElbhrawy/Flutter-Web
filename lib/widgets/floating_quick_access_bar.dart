@@ -14,7 +14,7 @@ class FloatingQuickAccessBar extends StatefulWidget {
 }
 
 class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
-  List _isHovering = [false, false, false, false];
+  final List _isHovering = [false, false, false, false];
   List<Widget> rowElements = [];
 
   List<String> items = ['History', 'Science', 'Philosophy', 'Novels'];
@@ -75,19 +75,61 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
         ),
-        child: Card(
-          elevation: 5.0,
-          child: Padding(
-            padding: EdgeInsetsDirectional.only(
-              top: widget.screenSize.height / 50,
-              bottom: widget.screenSize.height / 50,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: generateRowElements(),
-            ),
-          ),
-        ),
+        child: ResponsiveWidget.isSmallScreen(context)
+            ? Column(
+                children: [
+                  ...List.generate(
+                    icons.length,
+                    (index) => Card(
+                      elevation: 4.0,
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.only(
+                          top: widget.screenSize.height / 45,
+                          bottom: widget.screenSize.height / 45,
+                          start: widget.screenSize.height / 40,
+                        ),
+                        child: ListTile(
+                          leading: Icon(icons[index]),
+                          title: InkWell(
+                            splashColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            onHover: (value) {
+                              setState(() {
+                                value
+                                    ? _isHovering[index] = true
+                                    : _isHovering[index] = false;
+                              });
+                            },
+                            onTap: () {},
+                            child: Text(
+                              items[index],
+                              style: TextStyle(
+                                color: _isHovering[index]
+                                    ? Colors.blueGrey[900]
+                                    : Colors.blueGrey,
+                              ),
+                            ),
+                          ),
+                          trailing: SizedBox.shrink(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            : Card(
+                elevation: 5.0,
+                child: Padding(
+                  padding: EdgeInsetsDirectional.only(
+                    top: widget.screenSize.height / 50,
+                    bottom: widget.screenSize.height / 50,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: generateRowElements(),
+                  ),
+                ),
+              ),
       ),
     );
   }
