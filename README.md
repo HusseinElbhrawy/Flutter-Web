@@ -1,5 +1,7 @@
 # Flutter Web project
 
+**You can try website from [here](https://radiant-elf-3ec88d.netlify.app/#/)**
+
 ## Screens 
 
 ![4](https://user-images.githubusercontent.com/64389727/159125186-c8c1796b-c1ec-434b-a0e7-47350c3ae36c.png)
