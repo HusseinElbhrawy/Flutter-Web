@@ -1,6 +1,6 @@
 # Flutter Web project
 
-**You can try website from [here](https://radiant-elf-3ec88d.netlify.app/#/)**
+**You can try website from [here](https://responsivedesign74.netlify.app/)**
 
 ## Screens 
 
